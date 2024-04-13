@@ -32,6 +32,6 @@ make up-d
 make down
 
 ### コンテナに入る
-make exec-vue
-make exec-rails
+make exec-vue  
+make exec-rails  
 make exec-db
