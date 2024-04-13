@@ -23,7 +23,7 @@ services:
       MYSQL_DATABASE: myapp_development
   vue:
     image: node:14
-    command: bash -c "cd /vue && yarn serve"
+    command: bash -c "cd /vue && yarn install && yarn serve"
     volumes:
       - ./vue:/vue
     ports:

@@ -16,7 +16,7 @@ restart:
 	
 # コンテナをビルド
 build:
-	docker-compose build
+	docker-compose build --no-cache=true
 	
 # railsコンテナに入る
 exec-rails:

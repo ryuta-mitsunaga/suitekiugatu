@@ -19,12 +19,6 @@ COPY app/Gemfile.lock /app/Gemfile.lock
 # BundlerでGemをインストール
 RUN bundle install
 
-# Vue.jsのパッケージをインストール
-COPY vue/package.json /vue/package.json
-COPY vue/yarn.lock /vue/yarn.lock
-WORKDIR /vue
-RUN yarn install
-
 # ワーキングディレクトリを再設定
 WORKDIR /app
 
