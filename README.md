@@ -7,7 +7,7 @@
 ```
 cd suitekiugatu
 make build
-make up または make up-d
+make up
 
 しばらく待つ
 
