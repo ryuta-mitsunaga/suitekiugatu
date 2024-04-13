@@ -1,37 +1,32 @@
-起動などはmakeコマンドを使用しています。  
-実際にどのようなコマンドを実行しているのかを確認する場合は、  
-`Makefile` を確認してください。  
-※ ローカルマシンのOSに合わせてmakeコマンドを使用できるようにする必要があります。
+# 概要
+
+このプロジェクトは、Ruby on RailsとVue.jsをDocker内で動作させることにより、環境構築のコストを削減することを目的としています。Dockerコンテナ内でアプリケーションを実行することで、開発者は環境構築にかかる手間を軽減し、素早く開発を始めることができます。
+
+Ruby on Rails：`/app`  
+Vue：`/vue`
+
+# 環境構築
+
+1. **makeコマンドの利用（Macはデフォルトで入っているか確認）**: プロジェクトの起動やコンテナの管理には、`make`コマンドを使用しています。`make`コマンドを使用することで、簡単にコンテナのビルド、起動、停止などを行うことができます。Macユーザーは通常、`make`コマンドを使用できますが、インストールされていない場合は別途インストールする必要があります。
+
+2. **Docker for Desktopのインストール**: プロジェクトを実行するには、Docker for Desktopが必要です。Docker for Desktopをインストールすることで、ローカルマシンでDockerコンテナを実行し、開発を行うことができます。
 
 # 初回実行時
-```
-cd suitekiugatu
-make build
-make up
 
-しばらく待つ
+初回実行時には、以下の手順に従ってプロジェクトをセットアップします。
 
-vue-1  |   App running at:
-vue-1  |   - Local:   http://localhost:8080/ 
-vue-1  |   - Network: http://172.23.0.4:8080/
-vue-1  | 
-vue-1  |   Note that the development build is not optimized.
-vue-1  |   To create a production build, run yarn build.
-vue-1  | 
+1. プロジェクトのルートディレクトリに移動します。
+2. `make build`コマンドを実行して、Dockerイメージをビルドします。
+3. `make up`コマンドを実行して、コンテナを起動します。
+4. 起動が完了したら、指示に従ってブラウザでアプリケーションにアクセスします（デフォルトでは[http://localhost:8080/](http://localhost:8080/)）。
 
-上記のログが出たら http://localhost:8080/ にアクセス
-```
+# 主なコマンド
 
-### 起動
-make up
+- `make up`: コンテナを起動します。
+- `make up-d`: コンテナをバックグラウンドで起動します。
+- `make down`: コンテナを停止します。
+- `make exec-vue`: Vue.jsコンテナに入ります。
+- `make exec-rails`: Railsコンテナに入ります。
+- `make exec-db`: データベースコンテナに入ります。
 
-### 起動（バックグラウンド）
-make up-d
-
-### 終了
-make down
-
-### コンテナに入る
-make exec-vue  
-make exec-rails  
-make exec-db
+これらのコマンドを使用することで、開発やデバッグをより効率的に行うことができます。
