@@ -5,8 +5,21 @@
 
 # 初回実行時
 ```
+cd suitekiugatu
 make build
 make up または make up-d
+
+しばらく待つ
+
+vue-1  |   App running at:
+vue-1  |   - Local:   http://localhost:8080/ 
+vue-1  |   - Network: http://172.23.0.4:8080/
+vue-1  | 
+vue-1  |   Note that the development build is not optimized.
+vue-1  |   To create a production build, run yarn build.
+vue-1  | 
+
+上記のログが出たら http://localhost:8080/ にアクセス
 ```
 
 ### 起動
